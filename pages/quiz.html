@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ตอบคำถาม</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/quiz.css">
+</head>
+
+<body>
+    <header class="gameHud" aria-label="สถานะผู้เล่น">
+        <div class="gameHudPill gameHudLife" aria-label="หัวใจที่เหลือ">
+            <span class="gameHudIcon" aria-hidden="true">💗</span>
+            <span id="heartBox"></span>
+        </div>
+
+        <div class="gameHudPill gameHudKey" aria-label="กุญแจที่สะสมได้">
+            <span class="gameHudIcon" aria-hidden="true">🗝️</span>
+            <span id="keyBox"></span>
+        </div>
+    </header>
+
+    <main class="quizPage">
+        <section class="quizBox">
+            <div class="questionTop">
+                <div id="questionNumber">ข้อที่ 1</div>
+                <div class="missionLabel">ภารกิจตอบคำถาม</div>
+            </div>
+
+            <div id="questionText">กำลังโหลดคำถาม...</div>
+
+            <div id="choiceArea">
+                <button class="choiceBtn" data-choice="A" type="button"></button>
+                <button class="choiceBtn" data-choice="B" type="button"></button>
+                <button class="choiceBtn" data-choice="C" type="button"></button>
+                <button class="choiceBtn" data-choice="D" type="button"></button>
+            </div>
+
+            <div class="skillPanel">
+                <img id="skillCharacter" src="" alt="">
+                <div class="skillInfo">
+                    <div id="skillName">สกิลตัวละคร</div>
+                    <div id="skillDescription">พลังพิเศษช่วยตอบคำถาม</div>
+                </div>
+                <button id="skillBtn" type="button">
+                    <span id="skillIcon">✨</span>
+                    <span id="skillButtonText">ใช้สกิล</span>
+                    <small id="skillCount"></small>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="skillEffect" aria-hidden="true">
+        <div class="skillAura"></div>
+        <img id="effectCharacter" src="" alt="">
+        <div id="effectIcon"></div>
+        <div id="effectText"></div>
+        <div class="skillParticles"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/quiz.js"></script>
+    <script src="../js/sound.js"></script>
+    <script src="../js/guide.js"></script>
+    <script src="../js/setting.js"></script>
+</body>
+
+</html>

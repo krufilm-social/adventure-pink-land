@@ -1,0 +1,770 @@
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+
+    width:100%;
+    height:100%;
+
+    overflow:hidden;
+
+    font-family:'Anuphan',sans-serif;
+
+}
+
+
+/* =====================================================
+   พื้นหลัง
+===================================================== */
+
+body{
+
+    background:url("../images/maps/map1.png");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    position:relative;
+
+}
+
+
+/* มืดลงเล็กน้อยเพื่อให้อ่านง่าย */
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.08);
+
+    pointer-events:none;
+
+    z-index:-1;
+
+}
+
+
+
+
+/* =====================================================
+   HUD
+===================================================== */
+
+.hud{
+
+    position:absolute;
+
+    top:20px;
+
+    left:25px;
+
+    right:25px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    z-index:1000;
+
+}
+
+
+/* =====================================================
+   กล่องหัวใจ
+===================================================== */
+
+.lifeBox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(255,255,255,.92);
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+
+/* =====================================================
+   กล่องกุญแจ
+===================================================== */
+
+.keyBox{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:rgba(255,255,255,.92);
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.18);
+
+}
+
+
+/* =====================================================
+   ไอคอน
+===================================================== */
+
+.icon{
+
+    font-size:34px;
+
+}
+
+
+/* =====================================================
+   จำนวนหัวใจ
+===================================================== */
+
+#heartBox{
+
+    font-size:32px;
+
+    letter-spacing:4px;
+
+}
+
+
+/* =====================================================
+   จำนวนกุญแจ
+===================================================== */
+
+#keyBox{
+
+    font-size:30px;
+
+    font-weight:800;
+
+    color:#ff4aa5;
+
+}
+
+
+/* =====================================================
+   พื้นที่แผนที่
+===================================================== */
+
+#map{
+
+    position:relative;
+
+    width:100%;
+
+    height:100vh;
+
+}
+
+
+/* =====================================================
+   พื้นที่วางด่าน
+===================================================== */
+
+#stageContainer{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+
+/* =====================================================
+   ตัวละคร
+===================================================== */
+
+#player{
+
+    position:absolute;
+
+    width:80px;
+
+    z-index:999;
+
+    transition:.6s;
+
+    pointer-events:none;
+
+    animation:float 1.8s ease-in-out infinite;
+
+}
+
+
+/* =====================================================
+   ปุ่มล่าง
+===================================================== */
+
+.bottomMenu{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:25px;
+
+    transform:translateX(-50%);
+
+    z-index:1000;
+
+}
+
+
+/* =====================================================
+   ปุ่มเริ่มด่าน
+===================================================== */
+
+#startStage{
+
+    width:320px;
+
+    height:72px;
+
+    border:none;
+
+    border-radius:45px;
+
+    cursor:pointer;
+
+    background:linear-gradient(
+        180deg,
+        #ff93d6,
+        #ff4aa5
+    );
+
+    color:white;
+
+    font-family:'Anuphan',sans-serif;
+
+    font-size:28px;
+
+    font-weight:800;
+
+    box-shadow:
+    0 8px 20px rgba(255,0,120,.35);
+
+    transition:.25s;
+
+}
+
+
+/* Hover */
+
+#startStage:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* Active */
+
+#startStage:active{
+
+    transform:scale(.96);
+
+}
+
+/* =====================================================
+   จุดด่าน
+===================================================== */
+
+.stage{
+
+    position:absolute;
+
+    width:74px;
+
+    height:74px;
+
+    background:linear-gradient(
+        180deg,
+        #ff8fd6,
+        #ff4aa5
+    );
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    border:5px solid white;
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,.25);
+
+    transition:.3s;
+
+}
+
+.stage::before{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:0;
+
+    height:0;
+
+    border-left:12px solid transparent;
+
+    border-right:12px solid transparent;
+
+    border-top:18px solid white;
+
+}
+
+.stage.normal::before{
+
+    border-top-color:#ff4aa5;
+
+}
+
+.stage.current::before{
+
+    border-top-color:#33cc66;
+
+}
+
+.stage.complete::before{
+
+    border-top-color:#ffb400;
+
+}
+
+.stage.lock::before{
+
+    border-top-color:rgba(255,255,255,.65);
+
+}
+
+
+/* =====================================================
+   ด่านปกติ
+===================================================== */
+
+.stage.normal{
+
+    background:linear-gradient(
+
+        180deg,
+
+        #ff9fdb,
+
+        #ff4aa5
+
+    );
+
+}
+
+
+/* =====================================================
+   ด่านปัจจุบัน
+===================================================== */
+
+.stage.current{
+
+    background:linear-gradient(
+        180deg,
+        #8cff9d,
+        #31c862
+    );
+
+    animation:pulse 1.2s infinite;
+
+}
+
+
+/* =====================================================
+   ด่านผ่านแล้ว
+===================================================== */
+
+.stage.complete{
+
+    background:linear-gradient(
+        180deg,
+        #ffe37f,
+        #ffb400
+    );
+
+}
+}
+
+
+/* =====================================================
+   ด่านยังไม่เปิด
+===================================================== */
+
+.stage.lock{
+
+    background:rgba(255,255,255,.45);
+
+    backdrop-filter:blur(6px);
+
+    color:white;
+
+}
+
+
+/* =====================================================
+   Hover
+===================================================== */
+
+.stage:hover{
+
+    transform:translateY(-6px) scale(1.08);
+
+}
+
+/* =====================================================
+   ตัวละคร
+===================================================== */
+
+
+
+/* =====================================================
+   เอฟเฟกต์ลอย
+===================================================== */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+
+/* =====================================================
+   เอฟเฟกต์ด่านปัจจุบัน
+===================================================== */
+
+@keyframes pulse{
+
+    0%{
+
+        box-shadow:
+        0 0 0 rgba(74,255,145,.7);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 25px rgba(74,255,145,.95);
+
+    }
+
+    100%{
+
+        box-shadow:
+        0 0 0 rgba(74,255,145,.7);
+
+    }
+
+}
+
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media(max-width:1400px){
+
+    .stage{
+
+        width:60px;
+
+        height:60px;
+
+        font-size:24px;
+
+    }
+
+    #player{
+
+        width:70px;
+
+    }
+
+}
+
+
+@media(max-width:1100px){
+
+    .stage{
+
+        width:55px;
+
+        height:55px;
+
+        font-size:22px;
+
+    }
+
+    #player{
+
+        width:60px;
+
+    }
+
+    #startStage{
+
+        width:260px;
+
+        height:62px;
+
+        font-size:24px;
+
+    }
+
+}
+
+
+/* =====================================================
+   เอฟเฟกต์ตอนผ่านด่าน
+===================================================== */
+
+.stage.complete::after{
+
+    content:"✓";
+
+    position:absolute;
+
+    right:-6px;
+
+    top:-6px;
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#ff9800;
+
+    font-size:16px;
+
+    font-weight:800;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+
+/* =====================================================
+   ด่านล็อก
+===================================================== */
+
+.stage.lock::after{
+
+    content:"🔒";
+
+    position:absolute;
+
+    top:-10px;
+
+    right:-8px;
+
+    font-size:20px;
+
+}
+
+/* ===========================
+   ปุ่มฟันเฟือง
+=========================== */
+
+.setting{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    z-index:3000;
+
+}
+
+#settingBtn{
+
+    width:70px;
+
+    height:70px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:34px;
+
+    background:linear-gradient(#ffe67d,#ffbf00);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.3);
+
+    transition:.25s;
+
+}
+
+/* ไม่หมุน */
+
+#settingBtn:hover{
+
+    transform:scale(1.08);
+
+}
+
+.settingMenu{
+
+    display:none;
+
+    position:absolute;
+
+    right:0;
+
+    bottom:85px;
+
+    width:220px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:12px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.settingMenu.show{
+
+    display:block;
+
+}
+
+.settingMenu button{
+
+    width:100%;
+
+    height:48px;
+
+    margin:6px 0;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#ffe6f3;
+
+    font-family:'Anuphan',sans-serif;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.settingMenu button:hover{
+
+    background:#ffb8dd;
+
+}
+/* Wrong answer marker: red 3D pin with a cross badge */
+.stage.wrong{
+    background:linear-gradient(180deg,#ff8799,#da3157);
+    color:#fff;
+    border-color:#fff;
+    box-shadow:0 10px 20px rgba(0,0,0,.25);
+}
+
+.stage.wrong::before{
+    border-top-color:#da3157;
+}
+
+.stage.wrong::after{
+    content:"✕";
+    position:absolute;
+    right:-7px;
+    top:-7px;
+    width:27px;
+    height:27px;
+    border:3px solid #da3157;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#fff;
+    color:#da3157;
+    font-size:17px;
+    font-weight:900;
+}

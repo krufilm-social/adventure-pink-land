@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>จัดการภารกิจ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/create.css">
+</head>
+
+<body>
+    <main class="container">
+        <h1>📝 จัดการภารกิจ</h1>
+
+        <section class="card">
+            <label for="missionName">ชื่อภารกิจ</label>
+            <input id="missionName" type="text" placeholder="เช่น พุทธประวัติ">
+
+            <label for="questionTotal">จำนวนคำถาม</label>
+            <div class="questionCount">
+                <input id="questionTotal" type="number" min="5" value="5">
+                <button id="generateBtn" type="button">สร้างคำถาม</button>
+            </div>
+
+            <label for="finalWord">คำตอบสุดท้าย</label>
+            <input id="finalWord" type="text" placeholder="เช่น ช ม พู ท วี ป" autocomplete="off">
+
+            <p class="fieldHint">
+                💡 เว้นวรรคเพื่อแบ่งตัวอักษรลงคนละหีบ เช่น “ช ม พู” จะสร้างหีบตัวอักษร 3 ใบ
+            </p>
+
+            <button id="splitBtn" type="button">ดูตัวอย่างหีบ</button>
+            <div id="pieceArea" aria-live="polite"></div>
+        </section>
+
+        <section id="questionArea"></section>
+
+        <div class="bottom">
+            <button id="saveBtn" type="button">💾 บันทึกภารกิจ</button>
+            <button id="backBtn" type="button">🏠 กลับ</button>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/create.js"></script>
+    <script src="../js/sound.js"></script>
+    <script src="../js/guide.js"></script>
+    <script src="../js/setting.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เรียงคำตอบสุดท้าย</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/answer.css">
+</head>
+
+<body>
+    <main class="answerPage">
+        <section class="answerCard">
+            <div class="answerBadge">🏆 ภารกิจสุดท้าย</div>
+            <h1>เรียงตัวอักษรให้เป็นคำตอบ</h1>
+            <p>แตะตัวอักษรด้านล่างเพื่อวางลงในช่อง</p>
+
+            <div id="answerSlots" class="answerSlots" aria-label="ช่องคำตอบ"></div>
+
+            <div class="letterBankWrap">
+                <div class="bankTitle">ตัวอักษรที่ค้นพบ</div>
+                <div id="letterBank" class="letterBank"></div>
+            </div>
+
+            <div class="guessWrap">
+                <label for="guessInput">💡 รู้คำตอบแล้วใช่ไหม? พิมพ์คำตอบได้เลย</label>
+                <input
+                    id="guessInput"
+                    type="text"
+                    placeholder="พิมพ์คำตอบสุดท้ายที่นี่"
+                    autocomplete="off">
+                <small>ตัวอักษรที่พิมพ์จะปรากฏในช่องคำตอบด้านบนโดยอัตโนมัติ</small>
+            </div>
+
+            <div class="answerActions">
+                <button id="resetBtn" class="secondaryBtn" type="button">↻ เริ่มเรียงใหม่</button>
+                <button id="checkBtn" class="primaryBtn" type="button" disabled>✓ ตรวจคำตอบ</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/answer.js"></script>
+    <script src="../js/sound.js"></script>
+    <script src="../js/guide.js"></script>
+    <script src="../js/setting.js"></script>
+</body>
+
+</html>

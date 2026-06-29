@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หีบสมบัตินำทาง</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/treasure.css">
+</head>
+
+<body>
+    <header class="gameHud" aria-label="สถานะผู้เล่น">
+        <div class="gameHudPill gameHudLife" aria-label="หัวใจที่เหลือ">
+            <span class="gameHudIcon" aria-hidden="true">💗</span>
+            <span id="heartBox"></span>
+        </div>
+
+        <div class="gameHudPill gameHudKey" aria-label="กุญแจที่สะสมได้">
+            <span class="gameHudIcon" aria-hidden="true">🗝️</span>
+            <span id="keyBox"></span>
+        </div>
+    </header>
+
+    <main class="gameArea">
+        <section class="chestStage" aria-label="พื้นที่หีบสมบัติ">
+            <div id="chestArea"></div>
+        </section>
+
+        <section class="collectPanel" aria-labelledby="collectTitle">
+            <div class="collectHeading">
+                <span aria-hidden="true">✨</span>
+                <h1 id="collectTitle">ตัวอักษรที่ค้นพบ</h1>
+                <span aria-hidden="true">✨</span>
+            </div>
+
+            <div class="collectContent">
+                <div id="collectLetters" aria-live="polite"></div>
+
+                <button id="answerBtn" type="button" disabled>
+                    <span aria-hidden="true">🧩</span>
+                    ไปเรียงคำ
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <div id="letterPopup" role="dialog" aria-modal="true" aria-labelledby="popupTitle">
+        <div class="popupGlow"></div>
+        <div class="popupCard">
+            <div class="popupStars" aria-hidden="true">✦ ✨ ✦</div>
+            <div class="popupTitle" id="popupTitle">พบตัวอักษรแล้ว!</div>
+            <div id="popupLetter"></div>
+            <div class="popupHint">เก็บลงกล่องคำใบ้</div>
+        </div>
+    </div>
+
+    <div id="effectArea" aria-hidden="true"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/treasure.js"></script>
+    <script src="../js/sound.js"></script>
+    <script src="../js/guide.js"></script>
+    <script src="../js/setting.js"></script>
+</body>
+
+</html>

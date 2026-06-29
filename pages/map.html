@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ดินแดนชมพูทวีป</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/global.css">
+<link rel="stylesheet" href="../css/map.css">
+
+</head>
+
+<body>
+
+<!-- ===============================
+     HUD
+================================ -->
+
+<div class="gameHud">
+
+    <div class="gameHudPill gameHudLife">
+
+        <span class="gameHudIcon">💗</span>
+
+        <div id="heartBox"></div>
+
+    </div>
+
+    <div class="gameHudPill gameHudKey">
+
+        <span class="gameHudIcon">🗝️</span>
+
+        <span id="keyBox">0 / 0</span>
+
+    </div>
+
+</div>
+
+<!-- ===============================
+     แผนที่
+================================ -->
+
+<div id="map">
+
+    <div id="stageContainer"></div>
+
+    <img id="player" src="">
+
+</div>
+
+<!-- ===============================
+     ปุ่มเริ่มด่าน
+================================ -->
+
+<script src="../js/map.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script src="../js/sound.js"></script>
+<script src="../js/guide.js"></script>
+<script src="../js/setting.js"></script>
+
+</body>
+
+</html>

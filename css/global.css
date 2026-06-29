@@ -1,0 +1,272 @@
+/* =====================================================
+   SETTING MENU
+===================================================== */
+
+/* =====================================================
+   SHARED GAME HUD
+===================================================== */
+
+html{
+    scrollbar-gutter:stable;
+}
+
+html.swal2-height-auto,
+body.swal2-height-auto{
+    height:100% !important;
+}
+
+html.swal2-shown,
+body.swal2-shown{
+    width:100% !important;
+    height:100% !important;
+    overflow:hidden !important;
+    padding-right:0 !important;
+}
+
+html.swal2-height-auto.swal2-shown,
+body.swal2-height-auto.swal2-shown{
+    width:100% !important;
+    height:100% !important;
+    min-height:100% !important;
+}
+
+body > .swal2-container{
+    position:fixed !important;
+    inset:0 !important;
+    padding:12px !important;
+}
+
+.chibiPopup{
+    border:4px solid rgba(255,255,255,.96) !important;
+    border-radius:34px !important;
+    background:linear-gradient(145deg,#fff,#ffe9f4) !important;
+    box-shadow:
+        0 22px 0 rgba(166,64,112,.16),
+        0 30px 65px rgba(73,26,52,.35),
+        inset 0 -6px 0 rgba(255,125,181,.13) !important;
+    font-family:'Anuphan',sans-serif !important;
+}
+
+body .swal2-popup:not(.guideModal){
+    border:4px solid rgba(255,255,255,.96);
+    border-radius:34px;
+    background:linear-gradient(145deg,#fff,#ffe9f4);
+    box-shadow:
+        0 18px 0 rgba(166,64,112,.14),
+        0 28px 60px rgba(73,26,52,.32),
+        inset 0 5px 0 rgba(255,255,255,.85);
+    font-family:'Anuphan',sans-serif;
+}
+
+body .swal2-popup:not(.guideModal) .swal2-title{
+    color:#d9367d;
+}
+
+body .swal2-popup:not(.guideModal) .swal2-confirm,
+body .swal2-popup:not(.guideModal) .swal2-cancel{
+    border-radius:999px !important;
+    font-family:'Anuphan',sans-serif !important;
+    font-weight:800 !important;
+}
+
+.chibiPopup .swal2-title{
+    color:#d9367d !important;
+}
+
+.chibiPopup .swal2-confirm{
+    border-radius:999px !important;
+    font-family:'Anuphan',sans-serif !important;
+    font-weight:800 !important;
+}
+
+.gameHud{
+    position:fixed;
+    top:clamp(18px,2.8vh,30px);
+    left:0;
+    width:100%;
+    padding:0 clamp(22px,3vw,44px);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    z-index:10000;
+    pointer-events:none;
+    font-family:'Anuphan',sans-serif;
+}
+
+.gameHudPill{
+    min-width:clamp(170px,14vw,245px);
+    height:clamp(62px,8vh,82px);
+    padding:0 clamp(20px,2vw,32px);
+    border:3px solid rgba(255,255,255,.9);
+    border-radius:999px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    background:linear-gradient(180deg,rgba(255,255,255,.98),rgba(255,247,251,.95));
+    box-shadow:
+        0 14px 32px rgba(78,30,58,.22),
+        inset 0 -4px 0 rgba(255,177,211,.22);
+    color:#663451;
+    font-size:clamp(23px,2.1vw,34px);
+    font-weight:800;
+}
+
+.gameHudIcon{
+    filter:drop-shadow(0 3px 3px rgba(155,67,105,.2));
+}
+
+.gameHudLife{
+    color:#ff4f93;
+}
+
+.gameHudKey{
+    color:#9c6610;
+}
+
+.gameHud .gameHudPill #heartBox,
+.gameHud .gameHudPill #keyBox{
+    color:inherit;
+    font:inherit;
+    letter-spacing:3px;
+}
+
+@media (max-width:650px){
+    .gameHud{
+        padding:0 12px;
+    }
+
+    .gameHudPill{
+        min-width:128px;
+        height:55px;
+        padding:0 14px;
+        gap:6px;
+        font-size:21px;
+    }
+}
+
+.setting{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    z-index:999999;
+
+}
+
+#settingBtn{
+
+    width:68px;
+
+    height:68px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    font-size:34px;
+
+    background:linear-gradient(180deg,#ffe57f,#ffbf00);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.25);
+
+    transition:.25s;
+
+}
+
+#settingBtn:hover{
+
+    transform:scale(1.08) rotate(15deg);
+
+}
+
+.settingMenu{
+
+    display:none;
+
+    position:absolute;
+
+    right:0;
+
+    bottom:82px;
+
+    width:240px;
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:12px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    animation:menuShow .25s ease;
+
+}
+
+.settingMenu.show{
+
+    display:block;
+
+}
+
+.settingMenu button{
+
+    width:100%;
+
+    height:50px;
+
+    margin:6px 0;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#ffe5f2;
+
+    color:#333;
+
+    font-family:'Anuphan',sans-serif;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.2s;
+
+}
+
+.settingMenu button:hover{
+
+    background:#ffc7e4;
+
+    transform:translateX(-3px);
+
+}
+
+@keyframes menuShow{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}

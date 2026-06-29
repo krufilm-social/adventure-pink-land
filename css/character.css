@@ -1,0 +1,254 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+
+font-family:'Anuphan',sans-serif;
+
+background:url("../images/select-cover.png");
+
+background-size:cover;
+background-position:center;
+
+height:100vh;
+
+overflow:hidden;
+
+}
+
+.overlay{
+
+width:100%;
+height:100%;
+
+background:rgba(255,255,255,.08);
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+}
+
+.titleBox{
+
+margin-top:120px;
+text-align:center;
+color:white;
+
+}
+
+.titleBox h1{
+
+display:none;
+
+}
+
+.titleBox p{
+
+margin-top:8px;
+
+font-size:28px;
+
+font-weight:700;
+
+color:white;
+
+text-shadow:0 3px 8px black;
+
+}
+
+.characters{
+
+margin-top:240px;
+
+display:flex;
+
+gap:22px;
+
+}
+
+.card{
+
+width:200px;
+height:315px;
+
+background:linear-gradient(#ffffff,#fff6f6);
+
+border-radius:30px;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+justify-content:space-between;
+
+padding:18px;
+
+border:4px solid white;
+
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+transition:.35s;
+
+}
+
+.card:hover{
+
+transform:translateY(-10px);
+
+}
+
+.card.active{
+
+border:5px solid gold;
+
+transform:translateY(-12px);
+
+box-shadow:0 0 35px gold;
+
+}
+
+.card img{
+
+width:120px;
+
+height:120px;
+
+object-fit:contain;
+
+}
+
+.card h2{
+
+margin-top:8px;
+
+font-size:24px;
+
+font-weight:800;
+
+}
+
+.heart{
+
+margin:10px 0;
+
+font-size:22px;
+
+}
+
+.skill{
+
+height:70px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:0 8px;
+
+font-size:18px;
+
+font-weight:600;
+
+line-height:1.35;
+
+text-align:center;
+
+}
+
+/* ==============================
+   ปุ่มเลือกตัวละคร
+============================== */
+
+.card button{
+
+width:150px;
+
+height:44px;
+
+border:none;
+
+border-radius:25px;
+
+background:linear-gradient(180deg,#ff8dd3,#ff4aa5);
+
+color:white;
+
+font-family:'Anuphan',sans-serif;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+margin-bottom:5px;
+
+box-shadow:
+0 5px 12px rgba(255,0,120,.35),
+inset 0 2px 0 rgba(255,255,255,.6);
+
+transition:.25s;
+
+}
+
+.card button:hover{
+
+transform:translateY(-3px) scale(1.05);
+
+background:linear-gradient(180deg,#ff9fda,#ff5ab0);
+
+}
+
+.card button:active{
+
+transform:scale(.95);
+
+}
+
+/* ==============================
+   ปุ่มเริ่มเกม
+============================== */
+
+#playBtn{
+
+margin-top:40px;
+
+width:360px;
+
+height:75px;
+
+border:none;
+
+border-radius:50px;
+
+font-size:30px;
+
+font-weight:800;
+
+background:linear-gradient(#ff7cc7,#ff3ea5);
+
+color:white;
+
+cursor:pointer;
+
+display:none;
+
+box-shadow:0 8px 20px rgba(255,0,120,.4);
+
+transition:.3s;
+
+}
+
+#playBtn:hover{
+
+transform:scale(1.05);
+
+}

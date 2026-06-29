@@ -1,0 +1,202 @@
+.guideModal{
+    width:min(920px,94vw) !important;
+    max-height:90vh;
+    padding:0 !important;
+    overflow:hidden;
+    border:4px solid rgba(255,255,255,.95) !important;
+    border-radius:34px !important;
+    background:linear-gradient(155deg,#fffdfb,#ffeaf5) !important;
+    box-shadow:0 25px 70px rgba(91,35,67,.35) !important;
+    font-family:'Anuphan',sans-serif !important;
+}
+
+.guideModal .swal2-html-container{
+    margin:0 !important;
+    padding:0 !important;
+    overflow:hidden !important;
+}
+
+.guideModal .swal2-actions{
+    width:100%;
+    margin:0 !important;
+    padding:14px 20px 19px;
+    background:#fff7fb;
+}
+
+.guideConfirm{
+    min-width:190px;
+    height:50px;
+    border:0 !important;
+    border-radius:999px !important;
+    background:linear-gradient(180deg,#ff8fc2,#f3428d) !important;
+    font:800 19px/1 'Anuphan',sans-serif !important;
+    box-shadow:0 8px 18px rgba(210,51,119,.22) !important;
+}
+
+.guideContent{
+    max-height:calc(90vh - 82px);
+    overflow-y:auto;
+    color:#63384e;
+    text-align:left;
+}
+
+.guideHero{
+    position:relative;
+    padding:25px 24px 22px;
+    overflow:hidden;
+    text-align:center;
+    background:linear-gradient(135deg,#ff75b4,#ffb3d5);
+    color:#fff;
+}
+
+.guideHero::before,
+.guideHero::after{
+    content:"🌸";
+    position:absolute;
+    top:15px;
+    font-size:55px;
+    opacity:.32;
+    transform:rotate(-18deg);
+}
+
+.guideHero::before{ left:25px; }
+.guideHero::after{ right:25px; transform:rotate(18deg); }
+
+.guideHeroIcon{
+    font-size:47px;
+    filter:drop-shadow(0 5px 6px rgba(118,31,75,.2));
+}
+
+.guideHero h2{
+    margin:4px 0 2px;
+    font-size:clamp(26px,3vw,38px);
+    line-height:1.2;
+}
+
+.guideHero p{
+    font-size:16px;
+    font-weight:600;
+    opacity:.95;
+}
+
+.guideBody{
+    padding:22px;
+}
+
+.guideGoal{
+    margin-bottom:17px;
+    padding:15px 18px;
+    border:2px solid #ffd36b;
+    border-radius:20px;
+    background:#fff9dc;
+    color:#795719;
+    font-size:17px;
+    font-weight:700;
+    line-height:1.6;
+}
+
+.guideGrid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:15px;
+}
+
+.guideCard{
+    padding:17px;
+    border:2px solid #ffd3e6;
+    border-radius:22px;
+    background:rgba(255,255,255,.88);
+    box-shadow:0 7px 18px rgba(135,59,94,.08);
+}
+
+.guideCard.full{
+    grid-column:1 / -1;
+}
+
+.guideCard h3{
+    margin:0 0 10px;
+    color:#df347d;
+    font-size:20px;
+}
+
+.guideCard ol,
+.guideCard ul{
+    margin:0;
+    padding-left:23px;
+}
+
+.guideCard li{
+    margin:7px 0;
+    font-size:15px;
+    font-weight:600;
+    line-height:1.55;
+}
+
+.guideRuleRow{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+}
+
+.guideRule{
+    padding:12px;
+    border-radius:16px;
+    font-size:14px;
+    font-weight:700;
+    line-height:1.5;
+}
+
+.guideRule.good{
+    background:#e9ffef;
+    color:#2d7b49;
+}
+
+.guideRule.bad{
+    background:#fff0f3;
+    color:#a63c61;
+}
+
+.skillGuide{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:8px;
+}
+
+.skillGuide div{
+    padding:10px 12px;
+    border-radius:14px;
+    background:#fff2f8;
+    font-size:14px;
+    font-weight:700;
+}
+
+.guideTip{
+    margin-top:17px;
+    padding:13px 16px;
+    border-radius:17px;
+    background:linear-gradient(90deg,#f1ecff,#fff0f8);
+    color:#6f5594;
+    font-size:15px;
+    font-weight:700;
+    text-align:center;
+}
+
+@media (max-width:650px){
+    .guideGrid,
+    .guideRuleRow,
+    .skillGuide{
+        grid-template-columns:1fr;
+    }
+
+    .guideCard.full{
+        grid-column:auto;
+    }
+
+    .guideBody{
+        padding:14px;
+    }
+
+    .guideHero{
+        padding:18px 12px;
+    }
+}
